@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+const connectionDB = require('./mongo.js');
+
 app.get('/', (req, res) => {
     res.send('¡Hola mundo!');
 });
