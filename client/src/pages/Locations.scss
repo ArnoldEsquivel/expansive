@@ -1,0 +1,130 @@
+.pageContainerLocations {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 6rem 1.5fr 3rem;
+    grid-template-areas:
+        "header"
+        "markerInfo"
+        "map"
+        "adminBtn";
+    row-gap: 2rem;
+    margin-bottom: 2rem;
+    height: 100%;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+        grid-template-rows: 1fr 6rem 1fr 3rem;
+    }
+
+    .markerInfoContainer {
+        grid-area: header;
+        height: 100%;
+        width: 100%;
+        background-color: #212529;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .backButton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 1rem;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .titleContainer {
+            width: 60%;
+
+            .title {
+                text-align: center;
+                font-size: 3.5rem;
+                font-weight: 400;
+                margin-bottom: 0px;
+
+                @media screen and (max-width: 768px) {
+                    font-size: 2.4rem;
+                }
+            }
+        }
+
+        .noMarkerInfoText {
+            font-weight: 400;
+            font-size: 1.5rem;
+            text-align: center;
+
+            @media screen and (max-width: 768px) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .markerInfo {
+        grid-area: markerInfo;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: #212529;
+        font-weight: 700;
+
+        .descStyle {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 12px 0;
+        }
+
+        .latLngContainer {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .makerTextNoInfo {
+            font-size: 1.5rem;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+    .mapContainer {
+        grid-area: map;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .mapsMap {
+            height: 100%;
+            width: 80%;
+
+        }
+    }
+
+    .btnContainer {
+        grid-area: adminBtn;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .adminButton {
+            width: 200px;
+            background-color: #02B875;
+            color: white;
+
+            &:hover {
+                background-color: #009d63;
+            }
+        }
+    }
+
+}

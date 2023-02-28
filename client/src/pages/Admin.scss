@@ -1,0 +1,62 @@
+.titleAdminContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 9rem;
+    width: 100%;
+    background-color: #212529;
+    color: white;
+    margin-bottom: 3rem;
+
+    .backButtonAdmin {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+.divTableAdjustWidth {
+    display: flex;
+    justify-content: center;
+
+    .tableContainerStyled {
+        width: 80%;
+        border: 3px double #212529;
+        border-radius: 10px;
+
+        .tableCellHeader {
+            padding: 0;
+            background-color: #212529;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .tableCellBody {
+            padding: 5px 10px;
+            color: #212529;
+            font-weight: 700;
+        }
+    }
+}
+
+.buttonLocationsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .buttonLocations {
+        margin-top: 2rem;
+        background-color: #02B875;
+        color: white;
+
+        &:hover {
+            background-color: #009d63;
+        }
+    }
+}
