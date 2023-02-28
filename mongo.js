@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 // const uri = 'mongodb://127.0.0.1:27017/maps';
 const uri = "mongodb+srv://Arnold:oEsWSQrzVTREkhMB@cluster0.mxcifpg.mongodb.net/maps?retryWrites=true&w=majority";
 
+mongoose.set('strictQuery', false)
+
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
