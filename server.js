@@ -4,7 +4,7 @@ const app = express();
 const connectionDB = require('./mongo.js');
 
 // Importación de rutas
-const ubicaciones = require('./server/routes/ubicaciones.js');
+const ubicaciones = require('./serverCarp/routes/ubicaciones.js');
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", 'http://127.0.0.1:5173');

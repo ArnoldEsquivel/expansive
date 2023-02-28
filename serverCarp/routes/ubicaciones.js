@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Ubicacion = require('../Models/ubicaciones.js');
+const Ubicacion = require('../models/ubicaciones.js');
 
 router.get('/getUbicaciones', (req, res) => {
     Ubicacion.find({}, (err, ubicaciones) => {
