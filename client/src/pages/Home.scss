@@ -12,11 +12,14 @@
         margin: 0;
         font-weight: 400;
         font-size: 4rem;
+        text-align: center;
     }
-
+    
     span {
+        margin-top: 2rem;
         font-size: 1.2rem;
         font-weight: 400;
+        text-align: center;
     }
 }
 
@@ -52,6 +55,7 @@
         span {
             font-size: 1.5rem;
             font-weight: 400;
+            text-align: center;
         }
     }
 
@@ -66,9 +70,25 @@
         align-items: center;
 
         span {
+            text-align: center;
             font-size: 1.5rem;
             font-weight: 400;
             color: white;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+
+        .buttonLocationsContainer {
+            width: 80%;
+            margin-bottom: 2rem;
+        }
+
+        .buttonsAdminContainer {
+            width: 85%;
+            margin-bottom: 2rem;
         }
     }
 }

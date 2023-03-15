@@ -13,10 +13,12 @@ import { Button, IconButton } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EditLocationAltIcon from '@mui/icons-material/EditLocationAlt';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
+import { CircularProgress } from "@mui/material";
 
 export default function Admin() {
     const [ubicaciones, setUbicaciones] = useState();
     const [actualizar, setActualizar] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getUbicaciones();
@@ -69,23 +71,31 @@ export default function Admin() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {ubicaciones?.map((ubicacion) => (
-                                <TableRow key={ubicacion._id}>
-                                    <TableCell align="center" className="tableCellBody">{ubicacion.nombre}</TableCell>
-                                    <TableCell align="center" className="tableCellBody">{ubicacion.descripcion}</TableCell>
-                                    <TableCell align="center" className="tableCellBody">{ubicacion.lat}</TableCell>
-                                    <TableCell align="center" className="tableCellBody">{ubicacion.lng}</TableCell>
-                                    <TableCell align="center" className="tableCellBody" sx={{ width: '80px', display: 'flex' }}>
-                                        <CreateUb update={true} ubicacion={ubicacion} setActualizar={setActualizar} actualizar={actualizar} />
-                                        <IconButton
-                                            color="error"
-                                            onClick={() => deleteUbicacion(ubicacion)}
-                                        >
-                                            <DeleteForeverIcon sx={{ color: 'red' }} />
-                                        </IconButton>
-                                    </TableCell>
-                                </TableRow>
-                            ))}
+                            {
+                                ubicaciones
+                                    ? ubicaciones.map((ubicacion) => (
+                                        <TableRow key={ubicacion._id}>
+                                            <TableCell align="center" className="tableCellBody">{ubicacion.nombre}</TableCell>
+                                            <TableCell align="center" className="tableCellBody">{ubicacion.descripcion}</TableCell>
+                                            <TableCell align="center" className="tableCellBody">{ubicacion.lat}</TableCell>
+                                            <TableCell align="center" className="tableCellBody">{ubicacion.lng}</TableCell>
+                                            <TableCell align="center" className="tableCellBodyButtons">
+                                                <CreateUb update={true} ubicacion={ubicacion} setActualizar={setActualizar} actualizar={actualizar} />
+                                                <IconButton
+                                                    color="error"
+                                                    onClick={() => deleteUbicacion(ubicacion)}
+                                                >
+                                                    <DeleteForeverIcon sx={{ color: 'red' }} />
+                                                </IconButton>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))
+                                    : <TableRow>
+                                        <TableCell colSpan={5} align="center" className="tableCellBody">
+                                            <CircularProgress sx={{color: '#212529'}} />
+                                        </TableCell>
+                                    </TableRow>
+                            }
                         </TableBody>
                     </Table>
                 </TableContainer>

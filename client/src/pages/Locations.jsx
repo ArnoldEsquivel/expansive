@@ -58,7 +58,7 @@ export default function Locations() {
                     <ArrowBackIcon />
                 </IconButton>
                 <div className="titleContainer">
-                    <h1 className="title">Descrubre todas nuestras ubicaciones</h1>
+                    <h1 className="title">Descubre todas nuestras ubicaciones</h1>
                 </div>
                 <h3 className="noMarkerInfoText">Aqui podrás ver la información de cualquiera de nuestras ubicaciónes</h3>
             </div>

@@ -9,7 +9,7 @@ export default function Home() {
         <div>
             <div className="titleHomeContainer">
                 <h1>Bienvenido</h1>
-                <span>Aqui podras visualizar en un mapa y administrar todas las ubicaciónes que desees</span>
+                <span>Aqui podras visualizar y administrar todas las ubicaciónes que desees</span>
             </div>
             <div className='spanQueHacerContainer'>
                 <span>Que deseas hacer primero?</span>
